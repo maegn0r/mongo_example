@@ -1,0 +1,14 @@
+version: "3.7"
+services:
+  gb-config-app:
+    build: .
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./server.jks:/tmp/key/server.jks
+      - C:\Users\Geralt\IdeaProjects\gb-settings:/tmp/gb-settings
+    environment:
+      GIT_URI: /tmp/gb-settings
+      ENCRYPT_KEYSTORE_LOCATION: file:///tmp/key/server.jks
+
+
